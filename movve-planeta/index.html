@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>MOVVE PLANETA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="inicio">
+
+<!-- ================= LOGO ================= -->
+<div class="floating-logo">
+    <img src="logo-movve-planeta.png" alt="MOVVE PLANETA">
+</div>
+
+<!-- ================= FONDO GALAXIA ================= -->
+<div class="galaxy-bg">
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+    <span class="shooting-star"></span>
+</div>
+
+<!-- ================= MENÚ ================= -->
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<nav id="mainMenu" class="menu">
+    <a href="#inicio" onclick="closeMenu()">Inicio</a>
+    <a href="#testimonios" onclick="closeMenu()">Resultados</a>
+    <a href="#ecosistema" onclick="closeMenu()">Ecosistema</a>
+    <a href="#galeria-videos" onclick="closeMenu()">Tutoriales</a>
+    <a href="#galeria-fotos" onclick="closeMenu()">Galeria</a>
+</nav>
+
+<!-- ================= HERO CON VIDEO ================= -->
+<header class="hero hero-video">
+    <video class="hero-bg-video" autoplay muted loop playsinline>
+        <source src="video-movve.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1><span>MOVVE</span> PLANETA 🌍</h1>
+        <p>
+            Red global de inversionistas Movve Wallet.
+            Crecimiento inteligente, inversión transparente y comunidad real.
+        </p>
+        <div class="buttons">
+            <a href="https://chat.whatsapp.com/CPnnPPINjQF12QwJta0eqx" class="btn btn-primary" target="_blank">
+                Únete al Grupo
+            </a>
+
+            <button class="btn btn-secondary" onclick="openPDF()">
+                Presentación oficial
+            </button>
+        </div>
+    </div>
+</header>
+<!-- ================= MODAL PDF ================= -->
+<div id="pdfModal" class="pdf-modal">
+    <div class="pdf-box">
+        <button class="close-btn" onclick="closePDF()">✕</button>
+        <iframe src="Presentacion-Movve-Wallet.pdf"></iframe>
+    </div>
+ </div>
+
+</section>
+<!-- ================= TESTIMONIOS ================= -->
+<section id="testimonios" class="section">
+    <h2 class="section-title">Resultados <span>Reales</span></h2>
+
+    <div class="slideshow">
+
+    <div class="slide activo">
+      <img src="img/testimonios/user1.jpg" alt="Usuario MOVVE">
+      <p>“Recuperé mi inversión en 14 días”</p>
+      <span>+ $1,250 USD</span>
+    </div>
+
+    <div class="slide">
+      <img src="img/testimonios/user2.jpg" alt="Usuario MOVVE">
+      <p>“Resultados constantes todos los meses”</p>
+      <span>+ $3,400 USD</span>
+    </div>
+
+    <div class="slide">
+      <img src="img/testimonios/user3.jpg" alt="Usuario MOVVE">
+      <p>“MOVVE Wallet cambió mi forma de invertir”</p>
+      <span>+ $980 USD</span>
+    </div>
+  </div>
+
+<!-- ================= WHATSAPP ================= -->
+<a href="https://wa.me/8496546334" class="whatsapp-float" target="_blank">💬</a>
+
+<!-- ================= ECOSISTEMA ================= -->
+<section id="ecosistema" class="section">
+    <h2 class="section-title">Ecosistema <span>Inteligente</span></h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🚀 Crecimiento</h3>
+            <p>Estructura, tecnología y visión a largo plazo.</p>
+        </div>
+
+        <div class="card">
+            <h3>💰 Inversión</h3>
+            <p>Decisiones informadas con transparencia total.</p>
+        </div>
+
+        <div class="card">
+            <h3>🌎 Comunidad</h3>
+            <p>El conocimiento compartido multiplica resultados.</p>
+        </div>
+      </div>
+
+ <div class="buttons">
+            <a href="https://app.movvewallet.com/register/TBwPNoUJCphFFh52NaizpC8kAgy5xAmHi8" class="btn btn-primary" target="_blank">
+                Registrate Ahora
+            </a>
+
+</section>
+<!-- ================= GALERÍA DE VIDEOS ================= -->
+<section id="galeria-videos" class="section">
+    <h2 class="section-title">Tutoriales <span>MOVVE</span></h2>
+
+    <div class="video-gallery">
+
+        <div class="video-card" onclick="openVideo('video1.mp4')">
+            <img src="thumb1.jpg" alt="Video 1">
+            <h3>Como crear tu Cuenta WALLET</h3>
+        </div>
+
+        <div class="video-card" onclick="openVideo('video2.mp4')">
+            <img src="thumb2.jpg" alt="Video 2">
+            <h3>Como crear tu Cuenta MOVVE</h3>
+        </div>
+
+        <div class="video-card" onclick="openVideo('video3.mp4')">
+            <img src="thumb3.jpg" alt="Video 3">
+            <h3>Como Invertir en MOVVE</h3>
+        </div>
+
+<div class="video-card" onclick="openVideo('video4.mp4')">
+            <img src="thumb4.jpg" alt="Video 4">
+            <h3>Como Retirar en MOVVE</h3>
+        </div>
+ <div id="videoModal" class="video-modal">
+    <div class="video-box">
+        <button class="close-btn" onclick="closeVideo()">✕</button>
+        <video id="modalVideo" controls autoplay>
+            <source src="" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+<script>
+const modal = document.getElementById('videoModal');
+const video = document.getElementById('modalVideo');
+
+function openVideo(src) {
+    video.src = src;
+    modal.style.display = 'flex';
+    video.play();
+}
+
+function closeVideo() {
+    video.pause();
+    video.currentTime = 0;
+    modal.style.display = 'none';
+}
+</script>
+
+</section>
+<!-- ================= GALERÍA DE FOTOS ================= -->
+<section id="galeria-fotos" class="section">
+    <h2 class="section-title">Nuestra <span>Galería</span></h2>
+
+    <div class="album">
+        <img src="foto1.jpg" alt="Foto 1">
+        <img src="foto2.jpg" alt="Foto 2">
+        <img src="foto3.jpg" alt="Foto 3">
+        <img src="foto4.jpg" alt="Foto 4">
+        <img src="foto5.jpg" alt="Foto 5">
+        <img src="foto6.jpg" alt="Foto 6">
+        <img src="foto7.jpg" alt="Foto 7">
+    </div>
+</section>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox">
+    <span class="close" id="close">&times;</span>
+    <img id="lightbox-img" src="">
+</div>
+
+<!-- ================= CTA ================= -->
+<section id="cta" class="cta">
+    <h2>El futuro financiero es ahora</h2>
+    <p>Forma parte de un movimiento sin fronteras.</p>
+    <div class="buttons">
+            <a href="https://app.movvewallet.com/register/TBwPNoUJCphFFh52NaizpC8kAgy5xAmHi8" class="btn btn-primary" target="_blank">
+                Entrar a MOVVE WALLET
+            </a>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>© 2026 <span>MOVVE PLANETA</span> · Todos los derechos reservados</p>
+</footer>
+
+<!-- ================= JS ================= -->
+<script>
+/* MODAL PDF */
+function openPDF() {
+    document.getElementById('pdfModal').style.display = 'flex';
+}
+function closePDF() {
+    document.getElementById('pdfModal').style.display = 'none';
+}
+
+/* MENÚ */
+function toggleMenu() {
+    document.getElementById('mainMenu').classList.toggle('active');
+}
+function closeMenu() {
+    document.getElementById('mainMenu').classList.remove('active');
+}
+
+/* LIGHTBOX */
+const images = document.querySelectorAll('.album img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.getElementById('close');
+
+images.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
+</script>
+
+</body>
+</html>
+
