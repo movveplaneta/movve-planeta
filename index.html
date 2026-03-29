@@ -3,42 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOVVE | Reproductor Premium</title>
-    <link rel="stylesheet" href="style.css">
+    <title>MOVVE | Acceso Premium</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="video-container">
-        <video id="movveVideo" controls poster="portada.jpg" playsinline>
+        <video id="movveVideo" poster="portada.jpg" playsinline>
             <source src="video.mp4" type="video/mp4">
-            Tu navegador no soporta videos MP4.
         </video>
     </div>
 
     <div id="overlayBloqueo">
         <div class="card">
-            <div id="main-content">
-                <div class="icon-shield">🛡️</div>
-                <h1>Verificación de Seguridad</h1>
-                <p>Has completado el tiempo de prueba. Para continuar con el acceso premium de <b>MOVVE</b>, confirma tu conexión.</p>
 
-                <a href="https://omg10.com/4/10800778" target="_blank" class="btn-pro" onclick="iniciarAcceso()">
-                    DESBLOQUEAR AHORA
+            <div id="main-content">
+                <div class="icon">🔒</div>
+                <h1>Acceso Premium</h1>
+                <p>Este contenido está protegido. Verifica tu acceso para continuar.</p>
+
+                <a href="https://omg10.com/4/10800778" target="_blank" class="btn-pro">
+                    DESBLOQUEAR CONTENIDO
                 </a>
             </div>
 
-            <div id="loader" style="display: none;">
-                <span class="status-text" id="statusLabel">Validando conexión...</span>
+            <div id="loader">
+                <span class="status-text">Validando acceso...</span>
                 <div class="progress-bar">
                     <div class="progress-fill" id="fill"></div>
                 </div>
-                <p class="loader-note">Sincronizando con MOVVE Planeta...</p>
+                <p class="loader-note">Redirigiendo...</p>
             </div>
+
         </div>
     </div>
 
-    <script src="https://alwingulla.com/88/pfe/current/tag.min.js?z=10800521" data-cfasync="false" async></script>
+    <!-- MONETAG -->
+    <script src="TU_SCRIPT_DE_MONETAG"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
