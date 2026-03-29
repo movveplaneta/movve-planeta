@@ -1,34 +1,50 @@
-// 1. CONFIGURACIÓN DEL TIEMPO: 60 Segundos
-const tiempoEspera = 60000; 
-
-// Activar el bloqueo después de 1 minuto
-setTimeout(() => {
+window.onload = function() {
+    const video = document.getElementById('movveVideo');
     const overlay = document.getElementById('overlayBloqueo');
-    overlay.style.display = 'flex';
-}, tiempoEspera);
+    const btnPro = document.querySelector('.btn-pro');
+    
+    // TIEMPO DE ESPERA: 1 Minuto (60,000 milisegundos)
+    const tiempoEspera = 60000; 
 
-// 2. LÓGICA DE DESBLOQUEO TRAS CLIC EN ANUNCIO
-function iniciarAcceso() {
+    console.log("MOVVE SYSTEM: Monitoreando tiempo de sesión...");
+
+    // Iniciar temporizador
+    setTimeout(() => {
+        if (overlay) {
+            overlay.style.display = 'flex';
+            // Pausar video nativo para forzar atención
+            if (video && !video.paused) {
+                video.pause();
+            }
+            console.log("MOVVE SYSTEM: Contenido bloqueado. Esperando verificación.");
+        }
+    }, tiempoEspera);
+
+    // Manejador del botón de desbloqueo
+    if (btnPro) {
+        btnPro.addEventListener('click', function() {
+            iniciarProcesoAcceso();
+        });
+    }
+};
+
+function iniciarProcesoAcceso() {
     const mainContent = document.getElementById('main-content');
     const loader = document.getElementById('loader');
     const fill = document.getElementById('fill');
 
-    // Cambiar vista: ocultar botón, mostrar carga
+    // Cambiar visualización
     mainContent.style.display = 'none';
     loader.style.display = 'block';
 
-    // Iniciar animación de la barra (4 segundos)
+    // Iniciar animación de barra de progreso
     setTimeout(() => {
         fill.style.width = '100%';
     }, 100);
 
-    // Cambiar estado visual a mitad de carga
+    // REDIRECCIÓN FINAL A TU SITIO WEB TRAS 5 SEGUNDOS
     setTimeout(() => {
-        document.getElementById('statusLabel').innerText = "ACCESO VERIFICADO ✅";
-    }, 2500);
-
-    // Quitar el bloqueo después de que termine la barra (4.5 segundos)
-    setTimeout(() => {
-        document.getElementById('overlayBloqueo').style.display = 'none';
-    }, 4500);
+        console.log("MOVVE SYSTEM: Redirigiendo a sitio oficial...");
+        window.location.href = "https://movveplaneta.site/";
+    }, 5000);
 }
