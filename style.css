@@ -1,0 +1,82 @@
+:root {
+    --primary: #00ff00; /* Verde MOVVE */
+    --bg-dark: #050505;
+    --text-btn: #000000; /* Texto Negro Pro */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del Video */
+.video-container {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    background: #000;
+    box-shadow: 0 0 50px rgba(0, 255, 0, 0.1);
+}
+
+/* CAPA DE BLOQUEO */
+#overlayBloqueo {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: none; /* Se activa por JS */
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+/* CARD PREMIUM */
+.card {
+    background: #0a0a0a;
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 360px;
+    width: 85%;
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 40px rgba(0, 255, 0, 0.3);
+}
+
+.icon-shield { font-size: 50px; margin-bottom: 20px; }
+
+h1 { color: #fff; font-size: 20px; text-transform: uppercase; letter-spacing: 1px; }
+
+p { color: rgba(255,255,255,0.6); font-size: 14px; margin-bottom: 30px; line-height: 1.5; }
+
+/* BOTÓN NEÓN CON TEXTO NEGRO */
+.btn-pro {
+    background: var(--primary);
+    color: var(--text-btn) !important;
+    text-decoration: none;
+    display: block;
+    padding: 18px;
+    font-weight: 900;
+    border-radius: 15px;
+    text-transform: uppercase;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-pro:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--primary);
+}
+
+/* PROGRESS BAR */
+.progress-bar { width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; margin: 20px 0; }
+.progress-fill { width: 0%; height: 100%; background: var(--primary); transition: width 4s linear; }
+.status-text { color: var(--primary); font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+.loader-note { font-size: 12px; color: #555; }
